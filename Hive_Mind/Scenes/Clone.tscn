@@ -113,4 +113,50 @@ wait_time = 6.0
 one_shot = true
 autostart = false
 
+[node name="Health" type="Node2D" parent="." index="6"]
+
+position = Vector2( 0, -6 )
+scale = Vector2( 1, 1.125 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Max" type="ColorRect" parent="Health" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -30.2222
+margin_right = 20.0
+margin_bottom = -20.2222
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="Current" type="ColorRect" parent="Health" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -30.2222
+margin_right = 20.0
+margin_bottom = -20.2222
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 0.0078125, 0.0078125, 1 )
+_sections_unfolded = [ "Rect", "Visibility" ]
+
 
