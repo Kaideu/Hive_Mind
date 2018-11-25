@@ -16,6 +16,8 @@ var debuffs = []
 var upgrades = 0
 var able_upgrade = true
 
+var ready = false
+
 func _ready():
 	health = MaxHealth
 	match unit_type:
@@ -46,24 +48,24 @@ func _ready():
 			unit_cost = 60
 	
 	if unit_type != null:
-		get_node("Sprite").get_node("AnimationPlayer").play(unit_type + "_down")
+		get_node("Sprite").get_node("AnimationPlayer").play(unit_type + "_idle")
+	yield($TimerClick, "timeout")
+	ready = true
 	
 	
-	
+	print("Ready: " + unit_type + " " + get_name())
+
+func _input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed("Place_Piece") and ready:
+		print("Clicked " + unit_type + " " + get_name())
+		Damaged()
+
 func Damaged():
 	health -= 1
 	print(health)
-	_CheckHP()
-
-func _CheckHP():
-	print("CheckingHP")
-	if health < 8:
-		$Health.show()
-	else:
-		$Health.hide()
 
 func _Died():
-	print("Drop Resource")
+	print("Dropping Resource: " + unit_type + " " + get_name())
 	queue_free()
 
 func _process(delta):
@@ -71,5 +73,12 @@ func _process(delta):
 		_Died()
 	if health > 0:
 		$Health/Current.rect_scale.x = health/MaxHealth
-	
+	if health < MaxHealth:
+		$Health.show()
+	if health >= MaxHealth:
+		health = MaxHealth
+		$Health.hide()
 
+#This is for the identification of the instance. using has_method(), this will be identified has a Clone
+func _is_Clone():
+	pass
