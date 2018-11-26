@@ -1,9 +1,34 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Clone.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/Clones/clones_idle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Clones/clones_animations.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Clones/damage_animations.png" type="Texture" id=3]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 30, 30 )
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "blue_form"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
 
 resource_name = "blue_idle"
 length = 0.5
@@ -19,7 +44,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0, 3 ]
+"values": [ 6, 9 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "green_form"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 10, 15 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -38,10 +82,29 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 4, 7 ]
+"values": [ 16, 19 ]
 }
 
 [sub_resource type="Animation" id=6]
+
+resource_name = "purple_form"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 20, 25 ]
+}
+
+[sub_resource type="Animation" id=7]
 
 resource_name = "purple_idle"
 length = 0.5
@@ -57,10 +120,29 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 8, 11 ]
+"values": [ 26, 29 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
+
+resource_name = "red_form"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 30, 35 ]
+}
+
+[sub_resource type="Animation" id=9]
 
 resource_name = "red_idle"
 length = 0.5
@@ -76,10 +158,29 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 12, 15 ]
+"values": [ 36, 39 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
+
+resource_name = "yellow_form"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 40, 45 ]
+}
+
+[sub_resource type="Animation" id=11]
 
 resource_name = "yellow_idle"
 length = 0.5
@@ -95,13 +196,84 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 16, 19 ]
+"values": [ 46, 49 ]
 }
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="Animation" id=12]
 
-custom_solver_bias = 0.0
-extents = Vector2( 30, 30 )
+resource_name = "Damage_1"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=13]
+
+resource_name = "Damage_2"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=14]
+
+resource_name = "Damage_3"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=15]
+
+resource_name = "Damage_4"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
 
 [node name="Clone" type="Area2D"]
 
@@ -116,116 +288,98 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 unit_type = null
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-texture = ExtResource( 2 )
-vframes = 5
-hframes = 4
-frame = 16
-_sections_unfolded = [ "Animation" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
-
-root_node = NodePath("..")
-autoplay = "yellow_down"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/blue_idle = SubResource( 4 )
-anims/green_idle = SubResource( 5 )
-anims/purple_idle = SubResource( 6 )
-anims/red_idle = SubResource( 7 )
-anims/yellow_idle = SubResource( 8 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 visible = false
 position = Vector2( 0, 10 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="TimerBlue" type="Timer" parent="." index="2"]
+[node name="TimerBlue" type="Timer" parent="." index="1"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = true
 autostart = false
 
-[node name="TimerGreen" type="Timer" parent="." index="3"]
+[node name="TimerGreen" type="Timer" parent="." index="2"]
 
 process_mode = 1
 wait_time = 1.0
 one_shot = true
 autostart = false
 
-[node name="TimerYellow" type="Timer" parent="." index="4"]
+[node name="TimerYellow" type="Timer" parent="." index="3"]
 
 process_mode = 1
 wait_time = 8.0
 one_shot = true
 autostart = false
 
-[node name="TimerPurple" type="Timer" parent="." index="5"]
+[node name="TimerPurple" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 6.0
 one_shot = true
 autostart = false
 
-[node name="Health" type="Node2D" parent="." index="6"]
-
-visible = false
-position = Vector2( 0, -15 )
-scale = Vector2( 1, 1.40625 )
-_sections_unfolded = [ "Transform", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Max" type="ColorRect" parent="Health" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -30.0
-margin_top = -31.0
-margin_right = 30.0
-margin_bottom = -21.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 0, 0, 0, 1 )
-
-[node name="Current" type="ColorRect" parent="Health" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -30.0
-margin_top = -31.0
-margin_right = 30.0
-margin_bottom = -21.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 0.0078125, 0.0078125, 1 )
-_sections_unfolded = [ "Rect", "Visibility" ]
-
-[node name="TimerClick" type="Timer" parent="." index="7"]
+[node name="TimerClick" type="Timer" parent="." index="5"]
 
 process_mode = 1
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[node name="Sprite_Main" type="Sprite" parent="." index="6"]
+
+texture = ExtResource( 2 )
+vframes = 5
+hframes = 10
+frame = 49
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="Anim" type="AnimationPlayer" parent="Sprite_Main" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/blue_form = SubResource( 2 )
+anims/blue_idle = SubResource( 3 )
+anims/green_form = SubResource( 4 )
+anims/green_idle = SubResource( 5 )
+anims/purple_form = SubResource( 6 )
+anims/purple_idle = SubResource( 7 )
+anims/red_form = SubResource( 8 )
+anims/red_idle = SubResource( 9 )
+anims/yellow_form = SubResource( 10 )
+anims/yellow_idle = SubResource( 11 )
+next/blue_form = "blue_idle"
+next/green_form = "green_idle"
+next/purple_form = "purple_idle"
+next/red_form = "red_idle"
+next/yellow_form = "yellow_idle"
+blend_times = [  ]
+
+[node name="Sprite_Damage" type="Sprite" parent="." index="7"]
+
+visible = false
+texture = ExtResource( 3 )
+hframes = 4
+_sections_unfolded = [ "Animation", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite_Damage" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Damage_1 = SubResource( 12 )
+anims/Damage_2 = SubResource( 13 )
+anims/Damage_3 = SubResource( 14 )
+anims/Damage_4 = SubResource( 15 )
+blend_times = [  ]
 
 

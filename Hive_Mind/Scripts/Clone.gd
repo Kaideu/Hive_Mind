@@ -20,6 +20,8 @@ var ready = false
 
 func _ready():
 	health = MaxHealth
+	
+	# Match the unit type and assign the stat values accordingly
 	match unit_type:
 		"red":
 			attack = 2.0
@@ -47,13 +49,16 @@ func _ready():
 			attack_range = 2
 			unit_cost = 60
 	
+	# Check that the unit type is assigned and access the main sprite node
 	if unit_type != null:
-		get_node("Sprite").get_node("AnimationPlayer").play(unit_type + "_idle")
+		get_node("Sprite_Main/Anim").play(unit_type + "_form")
+	
+	# wait for the spawning animation to finish to allow any interaction, notified by ready boolean.
 	yield($TimerClick, "timeout")
 	ready = true
-	
-	
-	print("Ready: " + unit_type + " " + get_name())
+	if ready:
+		print("Ready: " + unit_type + " " + get_name())
+
 
 func _input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("Place_Piece") and ready:
@@ -71,13 +76,9 @@ func _Died():
 func _process(delta):
 	if health <= 0:
 		_Died()
-	if health > 0:
-		$Health/Current.rect_scale.x = health/MaxHealth
-	if health < MaxHealth:
-		$Health.show()
-	if health >= MaxHealth:
-		health = MaxHealth
-		$Health.hide()
+	if health > 0 and health < MaxHealth:
+		get_node("Sprite_Damage").show()
+		get_node("Sprite_Damage/AnimationPlayer").play("Damage_" + str((int((MaxHealth - health)/2))))
 
 #This is for the identification of the instance. using has_method(), this will be identified has a Clone
 func _is_Clone():
