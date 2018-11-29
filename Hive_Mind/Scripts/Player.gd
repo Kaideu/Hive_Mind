@@ -50,7 +50,7 @@ func _process(delta):
 	var speed = get_current_speed()
 	velocity = get_input(velocity)
 	if velocity == Vector2(0,0):
-		$Sprite/Anim.play("idle")
+		$Sprite/Anim.current_animation = ("idle")
 	elif velocity != Vector2(0,0):
 		walk()
 	position += velocity.normalized() * delta * speed
