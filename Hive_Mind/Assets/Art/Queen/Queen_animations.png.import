@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/queen_walk.png-30d087c54fd15c8532f5f753817b57b9.stex"
+path="res://.import/Queen_animations.png-b175e84fe6656f05dbfb240ea3a41d48.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Queen/queen_walk.png"
-dest_files=[ "res://.import/queen_walk.png-30d087c54fd15c8532f5f753817b57b9.stex" ]
+source_file="res://Assets/Art/Queen/Queen_animations.png"
+dest_files=[ "res://.import/Queen_animations.png-b175e84fe6656f05dbfb240ea3a41d48.stex" ]
 
 [params]
 
