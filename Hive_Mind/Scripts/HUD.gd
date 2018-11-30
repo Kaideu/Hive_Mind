@@ -1,6 +1,5 @@
 extends Node
 
-signal Damage
 signal SpawnClone(type)
 signal mouse_left
 
@@ -22,7 +21,7 @@ func _ready():
 
 
 func _process(delta):
-	pass
+	$Top/Label_Amount.text = str(Global.resource)
 
 func button_able_toggle(pressed, type):
 	for i in buttons:
@@ -32,9 +31,6 @@ func button_able_toggle(pressed, type):
 func _input(event):
 	if event.is_action_pressed("Place_Piece"):
 		emit_signal("mouse_left")
-
-func _DamageCall():
-	emit_signal("Damage")
 
 func _SpawnClone(type):
 	print("entered")
@@ -51,7 +47,12 @@ func _on_ButtonBlock_toggled(pressed):
 			button_able_toggle(pressed, 0)
 			break
 		if able_spawn and pressed:
-			_SpawnClone("block")
+			var able_buy = CheckResource(Global.cost_block)
+			if able_buy:
+				Global.resource -= Global.cost_block
+				_SpawnClone("block")
+			else:
+				print("Not Enough Resource")
 
 
 func _on_ButtonRed_toggled(pressed):
@@ -63,7 +64,12 @@ func _on_ButtonRed_toggled(pressed):
 			button_able_toggle(pressed, 1)
 			break
 		if able_spawn and pressed:
-			_SpawnClone("red")
+			var able_buy = CheckResource(Global.cost_red)
+			if able_buy:
+				Global.resource -= Global.cost_red
+				_SpawnClone("red")
+			else:
+				print("Not Enough Resource")
 
 
 func _on_ButtonBlue_toggled(pressed):
@@ -75,7 +81,12 @@ func _on_ButtonBlue_toggled(pressed):
 			button_able_toggle(pressed, 2)
 			break
 		if able_spawn and pressed:
-			_SpawnClone("blue")
+			var able_buy = CheckResource(Global.cost_blue)
+			if able_buy:
+				Global.resource -= Global.cost_blue
+				_SpawnClone("blue")
+			else:
+				print("Not Enough Resource")
 
 
 func _on_ButtonGreen_toggled(pressed):
@@ -87,7 +98,12 @@ func _on_ButtonGreen_toggled(pressed):
 			button_able_toggle(pressed, 3)
 			break
 		if able_spawn and pressed:
-			_SpawnClone("green")
+			var able_buy = CheckResource(Global.cost_green)
+			if able_buy:
+				Global.resource -= Global.cost_green
+				_SpawnClone("green")
+			else:
+				print("Not Enough Resource")
 
 
 func _on_ButtonYellow_toggled(pressed):
@@ -99,7 +115,12 @@ func _on_ButtonYellow_toggled(pressed):
 			button_able_toggle(pressed, 4)
 			break
 		if able_spawn and pressed:
-			_SpawnClone("yellow")
+			var able_buy = CheckResource(Global.cost_yellow)
+			if able_buy:
+				Global.resource -= Global.cost_yellow
+				_SpawnClone("yellow")
+			else:
+				print("Not Enough Resource")
 
 
 func _on_ButtonPurple_toggled(pressed):
@@ -111,7 +132,12 @@ func _on_ButtonPurple_toggled(pressed):
 			button_able_toggle(pressed, 5)
 			break
 		if able_spawn and pressed:
-			_SpawnClone("purple")
+			var able_buy = CheckResource(Global.cost_purple)
+			if able_buy:
+				Global.resource -= Global.cost_purple
+				_SpawnClone("purple")
+			else:
+				print("Not Enough Resource")
 
 
 func _on_HUD_mouse_entered():
@@ -126,3 +152,9 @@ func _on_HUD_mouse_exited():
 
 func _on_Button_pressed():
 	emit_signal("Damage_Player", 2)
+
+func CheckResource(amount):
+	if amount > Global.resource:
+		return false
+	elif amount <= Global.resource:
+		return true

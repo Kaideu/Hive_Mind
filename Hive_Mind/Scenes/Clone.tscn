@@ -12,7 +12,7 @@ extents = Vector2( 30, 30 )
 [sub_resource type="Animation" id=2]
 
 resource_name = "blue_form"
-length = 0.5
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -22,7 +22,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 5 ]
@@ -31,7 +31,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 
 resource_name = "blue_idle"
-length = 0.5
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -41,7 +41,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 6, 9 ]
@@ -50,7 +50,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 
 resource_name = "green_form"
-length = 0.5
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -60,7 +60,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 10, 15 ]
@@ -69,7 +69,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 
 resource_name = "green_idle"
-length = 0.5
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -79,7 +79,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 16, 19 ]
@@ -88,7 +88,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=6]
 
 resource_name = "purple_form"
-length = 0.5
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -98,7 +98,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 20, 25 ]
@@ -107,7 +107,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=7]
 
 resource_name = "purple_idle"
-length = 0.5
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -117,7 +117,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 26, 29 ]
@@ -126,7 +126,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=8]
 
 resource_name = "red_form"
-length = 0.5
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -136,7 +136,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 30, 35 ]
@@ -145,7 +145,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=9]
 
 resource_name = "red_idle"
-length = 0.5
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -155,7 +155,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 36, 39 ]
@@ -164,7 +164,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=10]
 
 resource_name = "yellow_form"
-length = 0.5
+length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -174,7 +174,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 40, 45 ]
@@ -183,7 +183,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=11]
 
 resource_name = "yellow_idle"
-length = 0.5
+length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -193,7 +193,7 @@ tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
+"times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 46, 49 ]
@@ -335,7 +335,7 @@ autostart = true
 texture = ExtResource( 2 )
 vframes = 5
 hframes = 10
-frame = 49
+frame = 5
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Anim" type="AnimationPlayer" parent="Sprite_Main" index="0"]
@@ -344,7 +344,7 @@ root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-playback_speed = 1.0
+playback_speed = 3.0
 anims/blue_form = SubResource( 2 )
 anims/blue_idle = SubResource( 3 )
 anims/green_form = SubResource( 4 )
@@ -361,6 +361,7 @@ next/purple_form = "purple_idle"
 next/red_form = "red_idle"
 next/yellow_form = "yellow_idle"
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 [node name="Sprite_Damage" type="Sprite" parent="." index="7"]
 
@@ -369,7 +370,7 @@ texture = ExtResource( 3 )
 hframes = 4
 _sections_unfolded = [ "Animation", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite_Damage" index="0"]
+[node name="Anim" type="AnimationPlayer" parent="Sprite_Damage" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""

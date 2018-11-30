@@ -10,20 +10,20 @@
 [ext_resource path="res://Assets/Art/UI/HM-GUI-button-05-clone005.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Art/UI/JOYSTIX.TTF" type="DynamicFontData" id=9]
 [ext_resource path="res://Assets/Art/UI/HM-GUI-resource.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-008.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-011.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-011.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-008.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Art/UI/HM-GUI-heart-005.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-013.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-001-full.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-002.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-012.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-004.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-009.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-007.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-003.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-014.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-010.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-006-half-full.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-007.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-004.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-014.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-006-half-full.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-002.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-013.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-001-full.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-009.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-010.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-003.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Art/UI/HM-GUI-heart-012.png" type="Texture" id=24]
 [ext_resource path="res://Scripts/Heart.gd" type="Script" id=25]
 
 [sub_resource type="DynamicFont" id=1]
@@ -39,12 +39,12 @@ _sections_unfolded = [ "Font", "Settings" ]
 animations = [ {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "6",
+"name": "3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "3",
+"name": "6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -54,57 +54,57 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
-"name": "1",
+"name": "7",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "13",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": false,
-"name": "12",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "2",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
 "name": "10",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "7",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "11",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "0",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 23 ) ],
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": false,
+"name": "12",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "13",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "4",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "11",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 24 ) ],
 "loop": true,
-"name": "8",
+"name": "2",
 "speed": 5.0
 } ]
 
@@ -398,8 +398,8 @@ position = Vector2( 139, 25 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 0
-HP_max = 13
+HP_min = 0.0
+HP_max = 13.0
 
 [node name="Heart2" type="AnimatedSprite" parent="Top" index="12"]
 
@@ -407,8 +407,8 @@ position = Vector2( 184, 25 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 13
-HP_max = 26
+HP_min = 13.0
+HP_max = 26.0
 
 [node name="Heart3" type="AnimatedSprite" parent="Top" index="13"]
 
@@ -416,8 +416,8 @@ position = Vector2( 229, 25 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 26
-HP_max = 39
+HP_min = 26.0
+HP_max = 39.0
 
 [node name="Heart4" type="AnimatedSprite" parent="Top" index="14"]
 
@@ -425,8 +425,8 @@ position = Vector2( 274, 25 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 39
-HP_max = 52
+HP_min = 39.0
+HP_max = 52.0
 
 [node name="Heart5" type="AnimatedSprite" parent="Top" index="15"]
 
@@ -434,8 +434,8 @@ position = Vector2( 320, 25 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 52
-HP_max = 65
+HP_min = 52.0
+HP_max = 65.0
 
 [node name="Heart6" type="AnimatedSprite" parent="Top" index="16"]
 
@@ -443,8 +443,8 @@ position = Vector2( 39, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 65
-HP_max = 78
+HP_min = 65.0
+HP_max = 78.0
 
 [node name="Heart7" type="AnimatedSprite" parent="Top" index="17"]
 
@@ -452,8 +452,8 @@ position = Vector2( 84, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 78
-HP_max = 91
+HP_min = 78.0
+HP_max = 91.0
 
 [node name="Heart8" type="AnimatedSprite" parent="Top" index="18"]
 
@@ -461,8 +461,8 @@ position = Vector2( 129, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 91
-HP_max = 104
+HP_min = 91.0
+HP_max = 104.0
 
 [node name="Heart9" type="AnimatedSprite" parent="Top" index="19"]
 
@@ -470,8 +470,8 @@ position = Vector2( 175, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 104
-HP_max = 117
+HP_min = 104.0
+HP_max = 117.0
 
 [node name="Heart10" type="AnimatedSprite" parent="Top" index="20"]
 
@@ -479,8 +479,8 @@ position = Vector2( 220, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 117
-HP_max = 130
+HP_min = 117.0
+HP_max = 130.0
 
 [node name="Heart11" type="AnimatedSprite" parent="Top" index="21"]
 
@@ -488,8 +488,8 @@ position = Vector2( 264, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 130
-HP_max = 143
+HP_min = 130.0
+HP_max = 143.0
 
 [node name="Heart12" type="AnimatedSprite" parent="Top" index="22"]
 
@@ -497,8 +497,8 @@ position = Vector2( 309, 75 )
 frames = SubResource( 2 )
 animation = "13"
 script = ExtResource( 25 )
-HP_min = 143
-HP_max = 156
+HP_min = 143.0
+HP_max = 156.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_HUD_mouse_entered"]
 

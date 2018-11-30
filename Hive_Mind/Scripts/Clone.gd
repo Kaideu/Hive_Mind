@@ -51,7 +51,7 @@ func _ready():
 	
 	# Check that the unit type is assigned and access the main sprite node
 	if unit_type != null:
-		get_node("Sprite_Main/Anim").play(unit_type + "_form")
+		$Sprite_Main/Anim.play(unit_type + "_form")
 	
 	# wait for the spawning animation to finish to allow any interaction, notified by ready boolean.
 	yield($TimerClick, "timeout")
@@ -77,8 +77,14 @@ func _process(delta):
 	if health <= 0:
 		_Died()
 	if health > 0 and health < MaxHealth:
-		get_node("Sprite_Damage").show()
-		get_node("Sprite_Damage/AnimationPlayer").play("Damage_" + str((int((MaxHealth - health)/2))))
+		$Sprite_Damage.show()
+		var Damage = float((MaxHealth - health)/2)
+		$Sprite_Damage/Anim.play("Damage_" + str(int(Damage)))
+		if debuffs.has("slow"):
+			$Sprite_Main/Anim.playback_speed = (3.0/Damage)/2
+		elif !debuffs.has("slow"):
+			$Sprite_Main/Anim.playback_speed = 3.0/Damage
+		
 
 #This is for the identification of the instance. using has_method(), this will be identified has a Clone
 func _is_Clone():

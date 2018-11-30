@@ -1,17 +1,15 @@
 extends Node
 
 signal mouse_left
+
 var Checking_Spawn = false
 var able_spawn = false
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+
 onready var Clone = preload("res://Scenes/Clone.tscn")
 var list_Clones = []
 
 
 func _ready():
-	$HUD.connect("Damage", self, "_DamageClone")
 	$HUD.connect("SpawnClone", self, "_SpawnClone")
 	
 
@@ -19,9 +17,6 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-func _DamageClone():
-	pass
 
 func _SpawnClone(type):
 	print("entered")
