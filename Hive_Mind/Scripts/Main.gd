@@ -7,11 +7,15 @@ var able_spawn = false
 
 onready var Clone = preload("res://Scenes/Clone.tscn")
 var list_Clones = []
-
+onready var GetPlayer = preload("res://Scenes/Queen.tscn")
+onready var GetHUD = preload("res://Scenes/HUD.tscn")
 
 func _ready():
-	$HUD.connect("SpawnClone", self, "_SpawnClone")
-	
+	var Player = GetPlayer.instance()
+	Player.position = $Spawn.position
+	add_child(Player)
+	add_child(GetHUD.instance())
+	get_HUD()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -24,7 +28,6 @@ func _SpawnClone(type):
 	Checking_Spawn = true
 	var NewClone = Clone.instance()
 	NewClone.unit_type = type
-	Checking_Spawn = _Check_Mouse_Position()
 	if able_spawn:
 		$Game.add_child(NewClone)
 		NewClone.position = get_viewport().get_mouse_position()
@@ -37,6 +40,5 @@ func _input(event):
 	if event.is_action_pressed("Place_Piece"):
 		emit_signal("mouse_left")
 
-func _Check_Mouse_Position():
-	
-	return false
+func get_HUD():
+	$HUD.connect("SpawnClone", self, "_SpawnClone")

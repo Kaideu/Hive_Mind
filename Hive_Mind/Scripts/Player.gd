@@ -15,18 +15,10 @@ onready var count = respawn_time
 var gather_speed = 5
 var debuffs = []
 
-#var up
-#var down
-#var left
-#var right
-
 func _ready():
 	$RespawnTimer.wait_time = respawn_time
 	$GatherTimer.wait_time = gather_speed
-#	up = Input.is_action_pressed("ui_up")
-#	down = Input.is_action_pressed("ui_down")
-#	left = Input.is_action_pressed("ui_left")
-#	right = Input.is_action_pressed("ui_right")
+	Global.get_player()
 
 func walk():
 	$Sprite/Anim.current_animation = ("walk")
@@ -79,7 +71,6 @@ func respawn():
 	$Collider.disabled = false
 	show()
 	emit_signal("dead", false)
-	#need to change dead to false without code breaking here
 
 func countdown():
 	if count == 0:

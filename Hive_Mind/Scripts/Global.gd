@@ -21,9 +21,6 @@ func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
 	
-	Spawn_point = current_scene.get_node("Spawn").position
-	current_scene.get_node("Queen").connect("dead", self, "get_dead")
-	
 func _process(delta):
 	if health < 0:
 		health = 0
@@ -31,3 +28,6 @@ func _process(delta):
 func get_dead(s):
 	dead = s
 
+func get_player():
+	current_scene.get_node("Queen").connect("dead", self, "get_dead")
+	Spawn_point = current_scene.get_node("Spawn").position
