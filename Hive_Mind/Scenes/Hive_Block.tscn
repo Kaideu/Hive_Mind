@@ -1,0 +1,103 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Hive_Block.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Art/Environment/Block/hiveblock_idle.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 35.0952, 35.0952 )
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "form"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 2 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 3.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2, 2.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 3, 10 ]
+}
+
+[node name="Hive_Block" type="RigidBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.02041e-005
+friction = 1.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 5
+contact_monitor = true
+sleeping = true
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = 0.0
+angular_velocity = 0.0
+angular_damp = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Angular", "Animation", "Applied Forces", "Collision", "Linear", "Pickable" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 8
+frame = 3
+_sections_unfolded = [ "Animation" ]
+
+[node name="Collider" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( -0.0681819, 0.0681782 )
+scale = Vector2( 0.91696, 0.91696 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Anim" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = "form"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/form = SubResource( 1 )
+anims/idle = SubResource( 2 )
+next/form = "idle"
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[connection signal="body_entered" from="." to="." method="_on_Hive_Block_body_entered"]
+
+

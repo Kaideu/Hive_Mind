@@ -44,19 +44,16 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30, 30 )
+extents = Vector2( 30, 29 )
 
-[node name="Queen" type="Area2D"]
+[node name="Queen" type="KinematicBody2D"]
 
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 0.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
+input_pickable = false
+collision_layer = 1
+collision_mask = 0
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
 Player_Speed = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
@@ -82,7 +79,7 @@ _sections_unfolded = [ "Playback Options" ]
 [node name="Collider" type="CollisionShape2D" parent="." index="1"]
 
 visible = false
-position = Vector2( 0, 10 )
+position = Vector2( 0, 12 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -106,7 +103,5 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
-
-[connection signal="timeout" from="RespawnCount" to="." method="countdown"]
 
 

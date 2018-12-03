@@ -2,7 +2,7 @@ extends Node
 
 var current_scene = null
 
-var MaxHealth = 8.0
+var MaxHealth = 45.0
 onready var health = MaxHealth
 var resource = 100
 
