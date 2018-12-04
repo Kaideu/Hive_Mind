@@ -16,11 +16,19 @@ var block
 
 onready var buttons = [$Top/ButtonBlock, $Top/ButtonRed, $Top/ButtonBlue, $Top/ButtonGreen, $Top/ButtonYellow, $Top/ButtonPurple]
 
+onready var B = preload ("res://Scenes/Hive_Block.tscn")
+onready var Pre_Block = B.instance()
+
 func _ready():
+	add_child(Pre_Block)
+	Pre_Block.modulate.a = 0.3
 	pass
 
-
 func _process(delta):
+	Pre_Block.visible = $Top/ButtonBlock.pressed
+	var Mouse_Pos = get_viewport().get_mouse_position()
+	var Tile_Pos = $TileMap.map_to_world($TileMap.world_to_map(get_viewport().get_mouse_position()))
+	Pre_Block.position = Tile_Pos + Vector2(32,32)
 	$Top/Label_Amount.text = str(Global.resource)
 
 func button_able_toggle(pressed, type):
@@ -33,14 +41,13 @@ func _input(event):
 		emit_signal("mouse_left")
 
 func _SpawnClone(type):
-	print("entered")
+	#print("entered")
 	emit_signal("SpawnClone", type)
 
 
 func _on_ButtonBlock_toggled(pressed):
 	button_able_toggle(pressed, 0)
 	while pressed:
-		print(pressed)
 		yield(self, "mouse_left")
 		if $Top/ButtonBlock.pressed == false:
 			pressed = false
@@ -142,12 +149,12 @@ func _on_ButtonPurple_toggled(pressed):
 
 func _on_HUD_mouse_entered():
 	able_spawn = true
-	print("EnteredHUD")
+	#print("EnteredHUD")
 
 
 func _on_HUD_mouse_exited():
 	able_spawn = false
-	print("Left HUD")
+	#print("Left HUD")
 
 
 func _on_Button_pressed():
