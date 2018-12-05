@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HIVE-MIND-QUEEN-EGG-HATCH.png-183732a8cebab330ff396a3553723e5e.stex"
+path="res://.import/Power_Source_Pulse.png-0ad19522434cfbf2857c12d7d61ff52a.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Environment/HIVE-MIND-QUEEN-EGG-HATCH.png"
-dest_files=[ "res://.import/HIVE-MIND-QUEEN-EGG-HATCH.png-183732a8cebab330ff396a3553723e5e.stex" ]
+source_file="res://Assets/Art/Environment/PowerSource/Power_Source_Pulse.png"
+dest_files=[ "res://.import/Power_Source_Pulse.png-0ad19522434cfbf2857c12d7d61ff52a.stex" ]
 
 [params]
 

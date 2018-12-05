@@ -11,7 +11,12 @@ var list_Clones = []
 onready var GetPlayer = preload("res://Scenes/Queen.tscn")
 onready var GetHUD = preload("res://Scenes/HUD.tscn")
 
-var current_blocks = []
+var Mouse_Pos
+var Tile_Pos
+
+var test
+
+#var current_blocks = []
 
 func _ready():
 	var Player = GetPlayer.instance()
@@ -19,29 +24,25 @@ func _ready():
 	add_child(Player)
 	add_child(GetHUD.instance())
 	get_HUD()
-	current_blocks.push_back($TileMap.map_to_world($TileMap.world_to_map($PoweSource.position)) + Vector2(32,32))
-	print(current_blocks)
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	Mouse_Pos = get_viewport().get_mouse_position()
+	Tile_Pos = $TileMap.map_to_world($TileMap.world_to_map(Mouse_Pos)) + Vector2(32,32)
+	
 
 func _SpawnClone(type):
-	var Mouse_Pos = get_viewport().get_mouse_position()
-	var Tile_Pos = $TileMap.map_to_world($TileMap.world_to_map(get_viewport().get_mouse_position()))
-	able_spawn = true
-	Checking_Spawn = true
 	if type == "block":
-		able_spawn = Check_Placement()
-		var NewBlock = Block.instance()
+		able_spawn = Check_Placement2()
 		if able_spawn:
-			$Game.add_child(NewBlock)
-			NewBlock.position = Tile_Pos + Vector2(32,32) # Needs to be replaced with tile position
-			#current_blocks.append(NewBlock.position)
-			print(current_blocks)
-			able_spawn = false
+			able_spawn = CheckResource(Global.cost_block)
+			if able_spawn:
+				Global.resource -= Global.cost_block
+				var NewBlock = Block.instance()
+				$Game.add_child(NewBlock)
+				NewBlock.position = Tile_Pos
+				able_spawn = false
 	else:
+		able_spawn = true
 		var NewClone = Clone.instance()
 		NewClone.unit_type = type
 		if able_spawn:
@@ -56,24 +57,33 @@ func _input(event):
 func get_HUD():
 	$HUD.connect("SpawnClone", self, "_SpawnClone")
 
-#May change this so that it doesn't lag as the array grows.
-#May replace array with raycast or similar.
-func Check_Placement():
-	var Tile_Pos = $TileMap.map_to_world($TileMap.world_to_map(get_viewport().get_mouse_position())) + Vector2(32,32)
-	var U = Vector2(0,-64)
-	var D = Vector2(0,64)
-	var L = Vector2(-64,0)
-	var R = Vector2(64,0)
-	if current_blocks.has(Tile_Pos):
-			print("can't place")
-			return false
-	else:
-		for i in current_blocks:
+func Check_Placement2():
+	$RayCast2D.position = Tile_Pos
+	var Up = Vector2(0, -64)
+	var Down = Vector2(0, 64)
+	var Left = Vector2(-64, 0)
+	var Right = Vector2(64, 0)
+	var Same = Vector2(0,0)
+	var Dir = [Same, Up, Down, Left, Right]
+	for i in Dir:
+		$RayCast2D.cast_to = i
+		$RayCast2D.force_raycast_update()
+		print(i)
+		if $RayCast2D.is_colliding():
 			print(i)
-			print(Tile_Pos)
-			if Tile_Pos == i + U or Tile_Pos == i + D or Tile_Pos == i + L or Tile_Pos == i + R:
-				current_blocks.push_back(Tile_Pos)
-				print("Placed up")
+			if i == Same:
+				return false
+			else:
+				test = $RayCast2D.get_collider()
+				print("RayCollide" + test.name)
 				return true
-	print("Not Placed")
+	$RayCast2D.enabled = false
+	
+	
 	return false
+
+func CheckResource(amount):
+	if amount > Global.resource:
+		return false
+	elif amount <= Global.resource:
+		return true

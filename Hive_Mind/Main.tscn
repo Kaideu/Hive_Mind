@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/Environment/base.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Environment/PowerSource/Power_source.png" type="Texture" id=2]
 
-[node name="Main" type="Node" index="0"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 128 )
+
+[node name="Main" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -34,12 +39,41 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="PoweSource" type="Sprite" parent="." index="3"]
+[node name="PowerSource" type="Area2D" parent="." index="3"]
 
-position = Vector2( 610, 420 )
+editor/display_folded = true
+position = Vector2( 832, 448 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="PowerSource" index="0"]
+
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PowerSource" index="1"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="4"]
+
+position = Vector2( 898, 619 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 0 )
+collision_mask = 1
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 

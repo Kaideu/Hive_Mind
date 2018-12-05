@@ -29,6 +29,7 @@ func _process(delta):
 	var Mouse_Pos = get_viewport().get_mouse_position()
 	var Tile_Pos = $TileMap.map_to_world($TileMap.world_to_map(get_viewport().get_mouse_position()))
 	Pre_Block.position = Tile_Pos + Vector2(32,32)
+	Pre_Block.set_collision_mask_bit(0, false)
 	$Top/Label_Amount.text = str(Global.resource)
 
 func button_able_toggle(pressed, type):
@@ -41,7 +42,6 @@ func _input(event):
 		emit_signal("mouse_left")
 
 func _SpawnClone(type):
-	#print("entered")
 	emit_signal("SpawnClone", type)
 
 
@@ -54,12 +54,8 @@ func _on_ButtonBlock_toggled(pressed):
 			button_able_toggle(pressed, 0)
 			break
 		if able_spawn and pressed:
-			var able_buy = CheckResource(Global.cost_block)
-			if able_buy:
-				Global.resource -= Global.cost_block
-				_SpawnClone("block")
-			else:
-				print("Not Enough Resource")
+			_SpawnClone("block")
+		
 
 
 func _on_ButtonRed_toggled(pressed):

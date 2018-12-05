@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/base.png-9c64be0fe262257ff0b79292e4893a7d.stex"
+path="res://.import/Power_source.png-4687609fedde97264a6c2d2674667909.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Environment/base.png"
-dest_files=[ "res://.import/base.png-9c64be0fe262257ff0b79292e4893a7d.stex" ]
+source_file="res://Assets/Art/Environment/PowerSource/Power_source.png"
+dest_files=[ "res://.import/Power_source.png-4687609fedde97264a6c2d2674667909.stex" ]
 
 [params]
 

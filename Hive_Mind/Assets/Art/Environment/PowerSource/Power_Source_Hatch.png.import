@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HIVE-MIND-base-BB-TRACER.png-d4d147815880c6dbdf5cc766493e8a29.stex"
+path="res://.import/Power_Source_Hatch.png-9c83a8b66a756cc08fdcd8b3060de660.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Environment/HIVE-MIND-base-BB-TRACER.png"
-dest_files=[ "res://.import/HIVE-MIND-base-BB-TRACER.png-d4d147815880c6dbdf5cc766493e8a29.stex" ]
+source_file="res://Assets/Art/Environment/PowerSource/Power_Source_Hatch.png"
+dest_files=[ "res://.import/Power_Source_Hatch.png-9c83a8b66a756cc08fdcd8b3060de660.stex" ]
 
 [params]
 

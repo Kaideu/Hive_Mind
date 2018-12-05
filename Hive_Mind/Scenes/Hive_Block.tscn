@@ -44,7 +44,7 @@ tracks/0/keys = {
 "values": [ 3, 10 ]
 }
 
-[node name="Hive_Block" type="RigidBody2D"]
+[node name="Hive_Block" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1

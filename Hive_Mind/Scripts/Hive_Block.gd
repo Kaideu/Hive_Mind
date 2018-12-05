@@ -14,4 +14,5 @@ func _physics_process(delta):
 
 
 func _on_Hive_Block_body_entered(body):
-	print("Collided")
+	#print("Collided")
+	pass

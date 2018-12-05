@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HIVE-MIND-BASE-CYCLE.png-b5141fdc562d89288d172f3fe12a5f88.stex"
+path="res://.import/Power_Source_Cycle.png-59632165167d4b07dd8d5b89a7866872.stex"
 
 [deps]
 
-source_file="res://Assets/Art/Environment/HIVE-MIND-BASE-CYCLE.png"
-dest_files=[ "res://.import/HIVE-MIND-BASE-CYCLE.png-b5141fdc562d89288d172f3fe12a5f88.stex" ]
+source_file="res://Assets/Art/Environment/PowerSource/Power_Source_Cycle.png"
+dest_files=[ "res://.import/Power_Source_Cycle.png-59632165167d4b07dd8d5b89a7866872.stex" ]
 
 [params]
 
