@@ -72,7 +72,6 @@ _sections_unfolded = [ "Angular", "Animation", "Applied Forces", "Collision", "L
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 8
-frame = 3
 _sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="Collider" type="CollisionShape2D" parent="." index="1"]
@@ -96,6 +95,15 @@ next/form = "idle"
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="body_entered" from="." to="." method="_on_Hive_Block_body_entered"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 

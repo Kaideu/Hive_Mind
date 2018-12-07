@@ -14,6 +14,8 @@ onready var GetHUD = preload("res://Scenes/HUD.tscn")
 var Mouse_Pos
 var Tile_Pos
 
+var HiveCircuit = 0
+
 var test
 
 #var current_blocks = []
@@ -38,9 +40,13 @@ func _SpawnClone(type):
 			if able_spawn:
 				Global.resource -= Global.cost_block
 				var NewBlock = Block.instance()
+				if HiveCircuit > 0:
+					NewBlock.C_Num = HiveCircuit # Assigns circuit number as 1 if next to powersource
+					NewBlock.InCircuit = true
 				$Game.add_child(NewBlock)
 				NewBlock.position = Tile_Pos
 				able_spawn = false
+				HiveCircuit = 0
 	else:
 		able_spawn = true
 		var NewClone = Clone.instance()
@@ -58,6 +64,7 @@ func get_HUD():
 	$HUD.connect("SpawnClone", self, "_SpawnClone")
 
 func Check_Placement2():
+	var C = false
 	$RayCast2D.position = Tile_Pos
 	var Up = Vector2(0, -64)
 	var Down = Vector2(0, 64)
@@ -68,16 +75,17 @@ func Check_Placement2():
 	for i in Dir:
 		$RayCast2D.cast_to = i
 		$RayCast2D.force_raycast_update()
-		print(i)
 		if $RayCast2D.is_colliding():
-			print(i)
 			if i == Same:
 				return false
 			else:
 				test = $RayCast2D.get_collider()
-				print("RayCollide" + test.name)
-				return true
+				if test.name == "PowerSource":
+					HiveCircuit = 1
+					print(HiveCircuit)
+				C = true
 	$RayCast2D.enabled = false
+	return C
 	
 	
 	return false

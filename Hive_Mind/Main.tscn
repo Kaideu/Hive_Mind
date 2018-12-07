@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Art/Environment/PowerSource/Power_source.png" type="Texture" id=2]
+[ext_resource path="res://PowerSource.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Art/Environment/PowerSource/Power_source.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -43,7 +44,6 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="PowerSource" type="Area2D" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 832, 448 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -52,6 +52,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 2 )
 _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_group_": true
@@ -59,7 +60,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="PowerSource" index="0"]
 
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PowerSource" index="1"]
